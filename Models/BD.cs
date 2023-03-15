@@ -7,35 +7,36 @@ namespace Pizzas.Api.Models
 {
     public class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-014\SQLEXPRESS;DataBase=DAI-Pizzas;Trusted_Connection=True";
+        private static string _connectionString = @"Server=A-PHZ2-AMI-013;DataBase=DAI-Pizzas;Trusted_Connection=True";
 
         public static List<Pizza> ObtenerPizzas()
         {
             List<Pizza> lista = new List<Pizza>();
-             string sql = "SELECT * FROM Pizza";
-             using(SqlConnection db = new SqlConnection(_connectionString)){
-                 lista = db.Query<Pizza>(sql).ToList();
-             }
+             string sql = "SELECT * FROM Pizzas";
+             using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                lista = db.Query<Pizza>(sql).ToList();
+            }
              return lista;
         }
 
         public static List<Pizza> ObtenerPizzas(int IdPizza)
         {
             List<Pizza> lista = new List<Pizza>();
-             string sql = "SELECT * FROM Pizza WHERE IdPizza = @pIdPizza";
+             string sql = "SELECT * FROM Pizzas WHERE IdPizza = @pIdPizza";
              using(SqlConnection db = new SqlConnection(_connectionString)){
-                 lista = db.Query<Pizza>(sql).ToList();
+                 lista = db.Query<Pizza>(sql, new {pIdPizza = pizza.Id}).ToList();
              }
              return lista;
         }
 
-        public static void AgregarPelicula(Pizza pizza)
-        {
-            string sql = "INSERT INTO Pelicula VALUES (@pNombre, @pFoto, @pDescripcion, @pEstrellas, @pFkCategoria)";
-            using(SqlConnection db = new SqlConnection(_connectionString)){
-                db.Execute(sql, new {pNombre = pizza.Nombre, pLibreGLuten = pizza.LibreGLuten, pImporte = pizza.Importe, pDescripcion = pizza.Descripcion });
-            }
-        }
+        // public static void AgregarPelicula(Pizza pizza)
+        // {
+        //     string sql = "INSERT INTO Pelicula VALUES (@pNombre, @pFoto, @pDescripcion, @pEstrellas, @pFkCategoria)";
+        //     using(SqlConnection db = new SqlConnection(_connectionString)){
+        //         db.Execute(sql, new {pNombre = pizza.Nombre, pLibreGLuten = pizza.LibreGLuten, pImporte = pizza.Importe, pDescripcion = pizza.Descripcion });
+        //     }
+        // }
 
         // public static List<Pizzas> ObtenerUsuarios()
         // {

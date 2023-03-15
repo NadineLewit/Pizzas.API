@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47169188\\Desktop\\Pizzas.API\\Pizzas.API.csproj": {}
+    "C:\\Users\\47350201\\Downloads\\Pizzas.API\\Pizzas.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47169188\\Desktop\\Pizzas.API\\Pizzas.API.csproj": {
+    "C:\\Users\\47350201\\Downloads\\Pizzas.API\\Pizzas.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47169188\\Desktop\\Pizzas.API\\Pizzas.API.csproj",
+        "projectUniqueName": "C:\\Users\\47350201\\Downloads\\Pizzas.API\\Pizzas.API.csproj",
         "projectName": "Pizzas.API",
-        "projectPath": "C:\\Users\\47169188\\Desktop\\Pizzas.API\\Pizzas.API.csproj",
-        "packagesPath": "C:\\Users\\47169188\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47169188\\Desktop\\Pizzas.API\\obj\\",
+        "projectPath": "C:\\Users\\47350201\\Downloads\\Pizzas.API\\Pizzas.API.csproj",
+        "packagesPath": "C:\\Users\\47350201\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\47350201\\Downloads\\Pizzas.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\47169188\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\47350201\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
