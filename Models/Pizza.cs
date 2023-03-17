@@ -3,17 +3,17 @@ namespace Pizzas.Api.Models
 {
     public class Pizza
 {
-    private int _IdPizza;
+    private int _Id;
     private string _Nombre;
     private bool _LibreGLuten;
     private double _Importe;
     private string _Descripcion;
    
 
-    public int IdPizza
+    public int Id
     {
-        get{return _IdPizza;}
-        set{_IdPizza= value;}
+        get{return _Id;}
+        set{_Id = value;}
     }
     public string Nombre
     {

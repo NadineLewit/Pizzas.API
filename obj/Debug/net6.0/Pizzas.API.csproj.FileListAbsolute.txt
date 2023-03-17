@@ -66,3 +66,8 @@ C:\Users\47350201\Downloads\Pizzas.API\obj\Debug\net6.0\refint\Pizzas.API.dll
 C:\Users\47350201\Downloads\Pizzas.API\obj\Debug\net6.0\Pizzas.API.pdb
 C:\Users\47350201\Downloads\Pizzas.API\obj\Debug\net6.0\Pizzas.API.genruntimeconfig.cache
 C:\Users\47350201\Downloads\Pizzas.API\obj\Debug\net6.0\ref\Pizzas.API.dll
+C:\Users\47169188\Desktop\Pizzas.API\obj\Debug\net6.0\staticwebassets\msbuild.Pizzas.API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\47169188\Desktop\Pizzas.API\obj\Debug\net6.0\staticwebassets\msbuild.build.Pizzas.API.props
+C:\Users\47169188\Desktop\Pizzas.API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Pizzas.API.props
+C:\Users\47169188\Desktop\Pizzas.API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Pizzas.API.props
+C:\Users\47169188\Desktop\Pizzas.API\obj\Debug\net6.0\staticwebassets.pack.json

@@ -15,13 +15,24 @@ public class PizzasController : ControllerBase{
     [HttpGet("{id}")]
     public IActionResult GetById(int id) 
     {
-        return Ok(BD.ObtenerPizzas());
+        if(id == null)
+        {
+            return NotFound();
+        } 
+        else if(id >= 10 ||  id < 0)
+        {
+            return BadRequest();
+        }
+        else
+        {
+            return Ok(BD.ObtenerPizzasId(id));
+        }
     }
 
     [HttpPost]
     public IActionResult Create(Pizza pizza) 
     {
-        return Ok(BD.ObtenerPizzas());
+        return Ok(BD.AgregarPizza(pizza));
     }
     
     [HttpPut("{id}")]
