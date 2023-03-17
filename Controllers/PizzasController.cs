@@ -19,7 +19,7 @@ public class PizzasController : ControllerBase{
         {
             return NotFound();
         } 
-        else if(id >= 10 ||  id < 0)
+        else if(id < 0)
         {
             return BadRequest();
         }
@@ -38,14 +38,38 @@ public class PizzasController : ControllerBase{
     [HttpPut("{id}")]
     public IActionResult Update(int id, Pizza pizza) 
     {
-        return Ok(BD.ObtenerPizzas());
+        if(id != pizza.Id ||  id < 0)
+        {
+            return BadRequest();
+        } 
+        else if(pizza == null)
+        {
+            return NotFound();
+        }
+        else
+        {
+            return Ok(BD.Actualizar(id, pizza));
+        }
+        
     }
 
     [HttpDelete("{id}")]
-  public IActionResult DeleteById(int id) 
-  {
-        return Ok(BD.ObtenerPizzas());
-  }
+    public IActionResult DeleteById(int id) 
+    {
+        if(id == null)
+        {
+            return NotFound();
+        } 
+        else if(id < 0)
+        {
+            return BadRequest();
+        }
+        else
+        {
+            return Ok(BD.EliminarId(id));
+        }
+          
+    }
 
 
 

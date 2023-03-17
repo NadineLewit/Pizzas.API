@@ -5,7 +5,7 @@ namespace Pizzas.Api.Models
 {
     private int _Id;
     private string _Nombre;
-    private bool _LibreGLuten;
+    private bool _LibreGluten;
     private double _Importe;
     private string _Descripcion;
    
@@ -20,10 +20,10 @@ namespace Pizzas.Api.Models
         get{return _Nombre;}
         set{_Nombre= value;}
     }
-    public bool LibreGLuten
+    public bool LibreGluten
     {
-        get{return _LibreGLuten;}
-        set{_LibreGLuten= value;}
+        get{return _LibreGluten;}
+        set{_LibreGluten= value;}
     }
     public double Importe
     {

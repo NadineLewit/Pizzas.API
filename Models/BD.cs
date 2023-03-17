@@ -28,6 +28,50 @@ namespace Pizzas.Api.Models
              }
              return lista;
         }
+        public static int AgregarPizza(Pizza pizza) 
+        {
+        
+            string sqlQuery;
+
+            int intRowsAffected = 0;
+
+            sqlQuery = "INSERT INTO Pizzas (";
+
+            sqlQuery += " Nombre , LibreGluten , Importe , Descripcion";
+
+            sqlQuery += ") VALUES (";
+
+            sqlQuery += " @pNombre , @pLibreGluten , @pImporte , @pDescripcion";
+
+            sqlQuery += ")";
+
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+            
+                intRowsAffected = db.Execute(sqlQuery, new { pNombre = pizza.Nombre, pLibreGluten = pizza.LibreGluten, pImporte = pizza.Importe, pDescripcion = pizza.Descripcion});
+                return intRowsAffected;
+            }
+
+        }
+
+       public static Pizza Actualizar(int Id, Pizza pizza)
+        {
+            string sql = "UPDATE Pizzas SET Nombre = @pNombre, LibreGluten = @pLibreGluten , Importe = @pImporte, Descripcion = @pDescripcion WHERE Id = @pId ";
+            using(SqlConnection db = new SqlConnection(_connectionString)){
+                pizza = db.QueryFirstOrDefault<Pizza>(sql, new { pId = pizza.Id, pNombre = pizza.Nombre, pLibreGluten = pizza.LibreGluten, pImporte = pizza.Importe, pDescripcion = pizza.Descripcion});
+            }
+            return pizza;
+        }
+
+        public static int EliminarId(int Id)
+        {
+            int RegistrosEliminados = 0;
+            string sql = "DELETE FROM Pizzas WHERE Id = @pId ";
+            using(SqlConnection db = new SqlConnection(_connectionString)){
+                RegistrosEliminados = db.Execute(sql, new { pId = Id});
+            }
+            return  RegistrosEliminados;
+        }
 
         // public static int AgregarPizza(Pizza pizza)
         // {
@@ -36,11 +80,11 @@ namespace Pizzas.Api.Models
         //     sqlQuery = "INSERT INTO Pizzas (";
 
         //     sqlQuery += " Nombre , LibreGluten , Importe , Descripcion";
-            
+         
         //     sqlQuery += ") VALUES (";
-            
+         
         //     sqlQuery += " @pNombre , @pLibreGluten , @pImporte , @dDescripcion";
-            
+         
         //     sqlQuery += ")";
         //     using(SqlConnection db = new SqlConnection(CONNECTION_STRING)){
         //         devolver = db.Execute(sqlQuery, new {pNombre = pizza.Nombre, pLibreGluten = pizza.LibreGluten, pImporte = pizza.Importe, pDescripcion = pizza.Descripcion });
